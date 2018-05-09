@@ -1,0 +1,7 @@
+tensorflow==0.12.0rc1
+tflearn==0.2.2
+-e git+https://github.com/librosa/librosa.git@01951000f20105ef31a4f80e897cd41c386b9314#egg=librosa
+numpy==1.11.2
+requests
+flask
+werkzeug
