@@ -4,7 +4,7 @@ from werkzeug import secure_filename
 import prediction
 
 UPLOAD_FOLDER = 'uploads'
-ALLOWED_EXTENSIONS = set(['wav', '3gp'])
+ALLOWED_EXTENSIONS = set(['wav', 'gpp', '3gp'])
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -28,6 +28,14 @@ def upload_file():
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     path = "uploads/" + filename
+    if(path[-4:]=="3gpp"):
+        path2 = path
+        path = path2[:-4] + "wav"
+        os.system("ffmpeg -i "+path2+" "+path)
+    elif(path[-3:]=="3gp"):
+        path2 = path
+        path = path2[:-3] + "wav"
+        os.system("ffmpeg -i "+path2+" "+path)
     print (path)
     return prediction.predict(path)
 
