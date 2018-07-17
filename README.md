@@ -1,8 +1,2 @@
-# server
-
-it's a locally working server with flask
-
-
-## feature needed to be added
-
-changing the saved 3gp files to wav. (done)
+To see my graduation project thesis check this link
+https://github.com/AhmadSiwi/graduation-project-thesis.git
